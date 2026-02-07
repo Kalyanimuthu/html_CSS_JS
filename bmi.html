@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8fafc, #e5e7eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #020617;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border-radius: 14px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .calc {
+      background: #22c55e;
+      color: white;
+    }
+
+    .reset {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
+    .under { background: #bae6fd; }
+    .normal { background: #bbf7d0; }
+    .over { background: #fecaca; }
+
+    .back {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .back button {
+      background: transparent;
+      color: #2563eb;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>BMI Calculator</h1>
+
+  <input id="height" type="number" placeholder="Height (cm)">
+  <input id="weight" type="number" placeholder="Weight (kg)">
+
+  <button class="calc" onclick="calculateBMI()">Calculate BMI</button>
+  <button class="reset" onclick="resetBMI()">Reset</button>
+
+  <div id="result" class="result"></div>
+
+  <div class="back">
+    <button onclick="goDashboard()">← Back to Dashboard</button>
+  </div>
+</div>
+
+<script>
+  function calculateBMI() {
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const result = document.getElementById("result");
+
+    if (!height || !weight) {
+      alert("Please enter height and weight");
+      return;
+    }
+
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+    let category = "";
+    let cls = "";
+
+    if (bmi < 18.5) {
+      category = "Underweight";
+      cls = "under";
+    } else if (bmi < 25) {
+      category = "Normal";
+      cls = "normal";
+    } else {
+      category = "Overweight";
+      cls = "over";
+    }
+
+    result.textContent = `BMI: ${bmi} (${category})`;
+    result.className = `result ${cls}`;
+    result.style.display = "block";
+  }
+
+  function resetBMI() {
+    height.value = "";
+    weight.value = "";
+    result.style.display = "none";
+  }
+
+  function goDashboard() {
+    window.location.href = "dashboard.html";
+  }
+</script>
+
+</body>
+</html>

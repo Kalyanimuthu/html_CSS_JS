@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f8fafc, #e5e7eb);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #020617;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: span 2;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #facc15, #eab308);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .full {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Resume Information</h1>
+
+  <!-- PERSONAL DETAILS -->
+  <div class="section-title">Personal Details</div>
+  <div class="grid">
+    <input id="name" placeholder="Full Name">
+    <input id="title" placeholder="Job Title">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone Number">
+    <input id="location" placeholder="Location">
+    <input id="linkedin" placeholder="LinkedIn / GitHub URL">
+  </div>
+
+  <!-- CAREER OBJECTIVE -->
+  <div class="section-title">Career Objective</div>
+  <textarea id="objective" placeholder="Brief professional summary or career objective"></textarea>
+
+  <!-- SKILLS -->
+  <div class="section-title">Skills</div>
+  <div class="grid">
+    <textarea id="skills" class="full" placeholder="Technical Skills (comma separated)"></textarea>
+    <textarea id="softSkills" class="full" placeholder="Soft Skills (comma separated)"></textarea>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section-title">Projects</div>
+  <textarea id="projects" placeholder="Projects (one per line)"></textarea>
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Experience</div>
+  <textarea id="experience" placeholder="Work experience / Internship details"></textarea>
+
+  <!-- EDUCATION -->
+  <div class="section-title">Education</div>
+  <textarea id="education" placeholder="Educational qualifications"></textarea>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section-title">Certifications & Achievements</div>
+  <textarea id="certifications" placeholder="Certifications, awards, achievements"></textarea>
+
+  <button onclick="saveAndContinue()">
+    Save & Continue →
+  </button>
+
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>

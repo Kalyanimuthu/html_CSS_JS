@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Digital Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="digital_clock.css">
+</head>
+<body>
+
+<div class="scene">
+    <!-- Decorative Shapes -->
+    <div class="shape pink"></div>
+    <div class="shape blue"></div>
+
+    <!-- 12H / 24H Toggle -->
+    <button id="toggleFormat" class="format-toggle">12H</button>
+
+    <!-- Clock Card -->
+    <div class="clock-card">
+
+        <!-- AM / PM -->
+        <div id="ampm" class="ampm">AM</div>
+
+        <!-- HOURS -->
+        <div class="segment">
+            <span id="hours">11</span>
+            <small>HOURS</small>
+        </div>
+
+        <span class="colon">:</span>
+
+        <!-- MINUTES -->
+        <div class="segment">
+            <span id="minutes">03</span>
+            <small>MINS</small>
+        </div>
+
+        <span class="colon">:</span>
+
+        <!-- SECONDS -->
+        <div class="segment">
+            <span id="seconds">52</span>
+            <small>SEC</small>
+        </div>
+
+    </div>
+
+    <!-- Weekday -->
+    <div class="weekday" id="weekday">Friday</div>
+</div>
+
+<script src="digital_clock.js"></script>
+</body>
+</html>

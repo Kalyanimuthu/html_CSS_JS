@@ -1,0 +1,140 @@
+:root {
+  --bg: linear-gradient(135deg, #fff9db, #fef08a);
+  --card: rgba(255,255,255,0.85);
+  --text: #1f2937;
+  --accent: #facc15;
+  --accent-dark: #ca8a04;
+  --error: #dc2626;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #020617, #0f172a);
+  --card: rgba(2,6,23,0.85);
+  --text: #f8fafc;
+  --accent: #38bdf8;
+  --accent-dark: #0284c7;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: var(--card);
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 22px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: transparent;
+  color: var(--text);
+}
+
+.field label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.field input:focus + label,
+.field input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  background: var(--card);
+  padding: 0 6px;
+}
+
+.eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--error);
+}
+
+.footer-text {
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.success {
+  display: none;
+  margin-top: 20px;
+  padding: 12px;
+  background: #16a34a;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

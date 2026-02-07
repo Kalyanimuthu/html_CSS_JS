@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Resume Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ================= TEMPLATE SELECTION ================= -->
+  <aside class="editor">
+    <h2>Select a Template</h2>
+
+    <!-- CATEGORY BUTTONS -->
+    <div class="categories">
+      <button onclick="showCategory('classic')">Classic</button>
+      <button onclick="showCategory('modern')">Modern</button>
+      <button onclick="showCategory('minimal')">Minimal</button>
+    </div>
+
+    <!-- CLASSIC -->
+    <div class="templates hidden" id="classic">
+      <div class="tpl" onclick="selectTemplate('classic','model1','blue',this)">
+        <img src="thumbs/classic1.png">
+        <span>Classic Blue</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('classic','model2','green',this)">
+        <img src="thumbs/classic2.png">
+        <span>Classic Green</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('classic','model3','gray',this)">
+        <img src="thumbs/classic3.png">
+        <span>Classic Gray</span>
+      </div>
+    </div>
+
+    <!-- MODERN -->
+    <div class="templates hidden" id="modern">
+      <div class="tpl" onclick="selectTemplate('modern','model1','indigo',this)">
+        <img src="thumbs/modern1.png">
+        <span>Modern Indigo</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('modern','model2','teal',this)">
+        <img src="thumbs/modern2.png">
+        <span>Modern Teal</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('modern','model3','red',this)">
+        <img src="thumbs/modern3.png">
+        <span>Modern Red</span>
+      </div>
+    </div>
+
+    <!-- MINIMAL -->
+    <div class="templates hidden" id="minimal">
+      <div class="tpl" onclick="selectTemplate('minimal','model1','black',this)">
+        <img src="thumbs/minimal1.png">
+        <span>Minimal Black</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('minimal','model2','beige',this)">
+        <img src="thumbs/minimal2.png">
+        <span>Minimal Beige</span>
+      </div>
+      <div class="tpl" onclick="selectTemplate('minimal','model3','navy',this)">
+        <img src="thumbs/minimal3.png">
+        <span>Minimal Navy</span>
+      </div>
+    </div>
+
+    <button class="secondary" onclick="downloadPDF()">Download PDF</button>
+    <button class="back" onclick="goBack()">← Edit Resume</button>
+  </aside>
+
+  <!-- ================= PREVIEW ================= -->
+  <main class="preview">
+    <div id="resume" class="resume classic model1 blue">
+
+      <header>
+        <h1 id="pName"></h1>
+        <h3 id="pTitle"></h3>
+        <p id="pContact"></p>
+      </header>
+
+      <section>
+        <h4>Career Objective</h4>
+        <p id="pObjective"></p>
+      </section>
+
+      <section>
+        <h4>Technical Skills</h4>
+        <ul id="pSkills"></ul>
+      </section>
+
+      <section>
+        <h4>Soft Skills</h4>
+        <ul id="pSoftSkills"></ul>
+      </section>
+
+      <section>
+        <h4>Projects</h4>
+        <ul id="pProjects"></ul>
+      </section>
+
+      <section>
+        <h4>Experience</h4>
+        <p id="pExperience"></p>
+      </section>
+
+      <section>
+        <h4>Education</h4>
+        <p id="pEducation"></p>
+      </section>
+
+      <section>
+        <h4>Certifications & Achievements</h4>
+        <ul id="pCertifications"></ul>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="resume.js"></script>
+</body>
+</html>

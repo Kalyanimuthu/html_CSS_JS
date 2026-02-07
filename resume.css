@@ -1,0 +1,317 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #e5e7eb;
+}
+
+/* ================= LAYOUT ================= */
+.app {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 100vh;
+}
+
+/* ================= EDITOR PANEL ================= */
+.editor {
+  background: #020617;
+  color: #f8fafc;
+  padding: 28px;
+}
+
+.editor h2 {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: #facc15;
+  font-weight: 600;
+}
+
+.secondary {
+  background: #16a34a;
+  color: white;
+}
+
+.back {
+  margin-top: 12px;
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= CATEGORY BUTTONS ================= */
+.categories {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.categories button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.categories button:hover {
+  background: #475569;
+}
+
+/* ================= TEMPLATE GRID ================= */
+.templates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.tpl {
+  background: #020617;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.tpl img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.tpl span {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+.tpl:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.tpl.active {
+  outline: 3px solid #facc15;
+}
+
+/* ================= PREVIEW PANEL ================= */
+.preview {
+  padding: 30px;
+  background: #f3f4f6;
+  overflow-y: auto;
+}
+
+.resume {
+  background: white;
+  padding: 40px;
+  max-width: 850px;
+  margin: auto;
+  animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.resume header {
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.resume section {
+  margin-bottom: 18px;
+}
+
+.resume h4 {
+  border-bottom: 2px solid #facc15;
+  display: inline-block;
+}
+
+/* ================= COLOR THEMES ================= */
+/* Classic */
+.resume.blue h4 { border-color: #2563eb; }
+.resume.green h4 { border-color: #16a34a; }
+.resume.gray h4 { border-color: #374151; }
+
+/* Modern */
+.resume.indigo h4 { border-color: #4f46e5; }
+.resume.teal h4 { border-color: #0d9488; }
+.resume.red h4 { border-color: #dc2626; }
+
+/* Minimal */
+.resume.black h4 { border-color: #000; }
+.resume.beige h4 { border-color: #d6cfc4; }
+.resume.navy h4 { border-color: #1e293b; }
+
+/* ================= TEMPLATE MODELS ================= */
+/* ===== CLASSIC 1 – Standard Column ===== */
+.resume.classic.model1 {
+  font-family: "Times New Roman", serif;
+}
+
+.resume.classic.model1 header {
+  text-align: left;
+}
+
+/* ===== CLASSIC 2 – Centered Header ===== */
+.resume.classic.model2 {
+  font-family: Georgia, serif;
+}
+
+.resume.classic.model2 header {
+  text-align: center;
+}
+
+.resume.classic.model2 h1 {
+  letter-spacing: 1px;
+}
+
+/* ===== CLASSIC 3 – Section Divider ===== */
+.resume.classic.model3 {
+  font-family: Cambria, serif;
+}
+
+.resume.classic.model3 section {
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 10px;
+}
+
+
+/* ===== MODERN 1 – Left Sidebar ===== */
+.resume.modern.model1 {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.resume.modern.model1 header {
+  grid-column: span 2;
+}
+
+.resume.modern.model1 section:first-child {
+  grid-column: 1;
+}
+
+.resume.modern.model1 section {
+  grid-column: 2;
+}
+
+/* ===== MODERN 2 – Top Banner ===== */
+.resume.modern.model2 header {
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.resume.modern.model2 section {
+  padding-left: 20px;
+}
+
+/* ===== MODERN 3 – Card Sections ===== */
+.resume.modern.model3 section {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+
+/* ===== MINIMAL 1 – Ultra Clean ===== */
+.resume.minimal.model1 {
+  font-family: Arial, sans-serif;
+}
+
+.resume.minimal.model1 h4 {
+  border: none;
+  font-weight: 600;
+}
+
+/* ===== MINIMAL 2 – Line Accents ===== */
+.resume.minimal.model2 h4 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.resume.minimal.model2 section {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 14px;
+}
+
+/* ===== MINIMAL 3 – Narrow Content ===== */
+.resume.minimal.model3 {
+  max-width: 650px;
+}
+
+.resume.minimal.model3 header {
+  margin-bottom: 30px;
+}
+
+
+/* ================= PRINT ================= */
+@media print {
+  body {
+    background: white;
+  }
+
+  .editor {
+    display: none;
+  }
+
+  .preview {
+    padding: 0;
+  }
+
+  .resume {
+    box-shadow: none;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+.hidden {
+  display: none;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="dash-title">Dashboard</h1>
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+  🌙
+</button>
+
+<div class="menu">
+  <button onclick="openPage('digital_clock.html')">🕒 Digital Clock</button>
+  <button onclick="openPage('bmi.html')">⚖️ BMI Calculator</button>
+  <button onclick="openPage('resume-form.html')">📄 Resume Generator</button>
+</div>
+
+
+
+
+<button class="logout" onclick="logout()">Logout</button>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

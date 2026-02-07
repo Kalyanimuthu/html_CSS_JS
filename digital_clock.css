@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #2b1055, #0b0020);
+    display: grid;
+    place-items: center;
+    font-family: "Inter", system-ui, sans-serif;
+    color: #fff;
+}
+
+/* ===== SCENE ===== */
+.scene {
+    position: relative;
+}
+
+/* ===== SHAPES ===== */
+.shape {
+    position: absolute;
+    z-index: 0;
+}
+
+.shape.pink {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff2d95, #ff6ec7);
+    border-radius: 18px;
+    left: -80px;
+    top: -50px;
+}
+
+.shape.blue {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #3b82f6, #38bdf8);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -70px;
+}
+
+/* ===== TOGGLE ===== */
+.format-toggle {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: transparent;
+    color: #fff;
+    font-size: 0.75rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+/* ===== CLOCK CARD ===== */
+/* ===== CLOCK CARD ===== */
+.clock-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 46px;
+    border-radius: 18px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.08)
+    );
+    backdrop-filter: blur(22px);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+
+/* ===== SEGMENTS ===== */
+.segment {
+    text-align: center;
+    min-width: 90px;
+}
+
+.segment span {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.segment small {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+/* ===== HOURS + AMPM ===== */
+.hour-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* ===== AM / PM (TOP RIGHT) ===== */
+.ampm {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+}
+
+
+/* ===== COLON ===== */
+.colon {
+    font-size: 2.6rem;
+    opacity: 0.8;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 0.8; }
+    25%, 75% { opacity: 0.25; }
+}
+
+/* ===== WEEKDAY ===== */
+.weekday {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    opacity: 0.75;
+}
