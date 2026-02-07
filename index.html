@@ -2,13 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Project</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="auth.css">
 </head>
 <body>
 
-  <h1>Hello World</h1>
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-  <script src="script.js"></script>
+<div class="page">
+  <div class="card">
+
+    <h1 id="title">Create your account</h1>
+    <p class="subtitle" id="subtitle">Start your journey</p>
+
+    <!-- NAME (only for register) -->
+    <div class="field" id="nameField">
+      <input id="name" required>
+      <label>Full Name</label>
+      <span class="error" id="nameError"></span>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="field">
+      <input id="email" required>
+      <label>Email</label>
+      <span class="error" id="emailError"></span>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="field password-field">
+      <input id="password" type="password" required>
+      <label>Password</label>
+      <span class="eye" onclick="togglePassword()">👁</span>
+    </div>
+
+    <!-- CONFIRM (only for register) -->
+    <div class="field" id="confirmField">
+      <input id="confirm" type="password" required>
+      <label>Confirm Password</label>
+      <span class="error" id="passwordError"></span>
+    </div>
+
+    <button class="primary-btn" onclick="submitForm()">Continue</button>
+
+    <p class="footer-text">
+      <span onclick="toggleMode()" id="toggleText">Already have an account? Login</span>
+    </p>
+
+    <!-- SUCCESS -->
+    <div class="success" id="success">
+      ✅ Success! Redirecting...
+    </div>
+
+  </div>
+</div>
+
+<script src="auth.js"></script>
 </body>
 </html>
